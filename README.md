@@ -4,6 +4,10 @@ This project is forked from https://github.com/errorception/redis-lock to work
 with v5 of [node-redis](https://github.com/redis/node-redis). Version for this
 fork starts with v2.0.0 to differentiate from original project.
 
+This forked project is not published on NPM registry. To install the package
+for this forked project, run :
+`npm install git@github.com:zionsg/redis-lock.git#v2.0.0`.
+
 # redis-lock
 
 Implements a locking primitive using redis in Node.js.
