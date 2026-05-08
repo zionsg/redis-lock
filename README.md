@@ -6,7 +6,7 @@ fork starts with v2.0.0 to differentiate from original project.
 
 This forked project is not published on NPM registry. To install the package
 for this forked project, run :
-`npm install git@github.com:zionsg/redis-lock.git#v2.0.0`.
+`npm install git@github.com:zionsg/redis-lock.git#v2.0.1`.
 
 # redis-lock
 

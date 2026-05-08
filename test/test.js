@@ -11,8 +11,12 @@ const { after, before, describe, it, test } = require('node:test');
 const assert = require('node:assert');
 
 const redisClient = require('redis').createClient();
-const lock = require('../index')(redisClient);
+redisClient.on('error', (err) => {
+    // Must listen to error event as per https://github.com/redis/node-redis/blob/master/README.md#events
+    console.error(err);
+});
 
+const lock = require('../index.js')(redisClient);
 const delay = function (fn, ms) {
     return new Promise((resolve, reject) => {
         setTimeout(

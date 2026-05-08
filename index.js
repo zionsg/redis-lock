@@ -26,11 +26,10 @@ async function acquireLock (client, lockName, timeout, retryDelay, onLockAcquire
 }
 
 function redisLock (client, retryDelay = DEFAULT_RETRY_DELAY) {
-    if(
-        !(client && client.set && ('v4' in client || 'v5' in client))
-    ) {
+    if (!client) {
         throw new Error('You must specify a v4 or v5 client instance of https://github.com/redis/node-redis');
     }
+
     async function lock (lockName, timeout = DEFAULT_TIMEOUT) {
         return new Promise(resolve => {
             if (!lockName) {
