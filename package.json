@@ -1,31 +1,33 @@
 {
   "author": "Rakesh Pai <rakeshpai@errorception.com> (http://errorception.com/)",
+  "homepage": "https://github.com/errorception/redis-lock",
   "name": "redis-lock",
   "description": "A locking primitive using redis.",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/errorception/redis-lock.git"
-  },
-  "main": "index.js",
-  "engines": {
-    "node": ">=12"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "4.x",
-    "redis": "4.x",
-    "should": "^13.x"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "optionalDependencies": {},
-  "homepage": "https://github.com/errorception/redis-lock",
   "keywords": [
     "locks",
     "concurrency",
     "redis",
     "distributed"
-  ]
+  ],
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zionsg/redis-lock.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "release": "echo \"Bumping package lock and docs to version $npm_package_version\" && npm install --package-lock-only --ignore-scripts",
+    "test": "node --test test/test.js"
+  },
+  "peerDependencies": {
+    "redis": "^5.12.1"
+  },
+  "peerDependenciesMeta": {
+    "redis": {
+      "optional": true
+    }
+  }
 }
